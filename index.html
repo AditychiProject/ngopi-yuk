@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ngopi Yuk</title>
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+    <!-- Alpine JS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- App JS -->
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar" x-data>
+      <!-- Navbar - Brand -->
+      <a href="#" class="navbar-brand">Ngopi Yuk</a>
+      <!-- Navbar - Nav -->
+      <div class="navbar-nav">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <!-- Navbar - Button -->
+      <div class="navbar-button">
+        <button id="search-button"><img src="icons/search-light.svg" /></button>
+        <button id="shopping-cart-button"><img src="icons/shopping-cart-light.svg" /></button>
+        <button id="menu-button"><img src="icons/menu.svg" /></button>
+      </div>
+      <!-- Navbar - Search Bar -->
+      <div class="search-bar">
+        <input type="text" id="search-box" placeholder="Cari menu disini..." autocomplete="off" />
+        <label for="search-box"><img src="icons/search-dark.svg" /></label>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <main class="content">
+        <h1>Mari Ngopi Yuk</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, doloribus!</p>
+        <a href="#menu" class="cta"><img src="icons/shopping-cart-dark.svg" /> <span>Buy Now</span></a>
+      </main>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="about">
+      <h2>About Us</h2>
+      <div class="row">
+        <!-- About - Image -->
+        <div class="about-image">
+          <img src="images/hero-bg.jpg" />
+        </div>
+        <!-- About - Contents -->
+        <div class="about-contents">
+          <h3>Why Choice Our Coffee?</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa corrupti, enim quasi iste officiis magni.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa corrupti, enim quasi iste officiis magni.</p>
+          <h3>Why Choice Our Coffee?</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa corrupti, enim quasi iste officiis magni.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa corrupti, enim quasi iste officiis magni.</p>
+        </div>
+      </div>
+    </section>
+    <!-- Menu Section -->
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, repudiandae?</p>
+      <div class="row">
+        <!-- Contact - Map -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63837.08094462957!2d109.3315505!3d-0.03539485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e1d58f604b0799b%3A0x511ef9501fc9ffe3!2sPontianak%2C%20Kota%20Pontianak%2C%20Kalimantan%20Barat!5e0!3m2!1sid!2sid!4v1709400164213!5m2!1sid!2sid"
+          class="map"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <!-- Contact - Form -->
+        <div class="form-container">
+          <form>
+            <div>
+              <h4>Form</h4>
+              <!-- Username -->
+              <div class="input-group">
+                <img src="icons/user.svg" />
+                <input type="text" placeholder="Username" autocomplete="off" />
+              </div>
+              <!-- Email -->
+              <div class="input-group">
+                <img src="icons/mail.svg" />
+                <input type="email" placeholder="Email" autocomplete="off" />
+              </div>
+              <!-- Message -->
+              <div class="input-group">
+                <img src="icons/message-circle.svg" />
+                <input type="text" placeholder="Hi. I want to buy a coffee!" autocomplete="off" />
+              </div>
+              <!-- Submit -->
+              <div class="btn-group">
+                <button type="button">
+                  <img src="icons/send.svg" />
+                  <span>Submit</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+      <!-- Footer - Socials -->
+      <div class="socials">
+        <a href="#"><img src="icons/twitter.svg" /></a>
+        <a href="#"><img src="icons/facebook.svg" /></a>
+        <a href="#"><img src="icons/instagram.svg" /></a>
+      </div>
+      <!-- Footer - Links -->
+      <div class="links">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <!-- Footer - Copyright -->
+      <div class="copyright">
+        <p>Copyright &copy; 2024 All rights reserved by Aditychi.</p>
+      </div>
+    </footer>
+  </body>
+  <!-- Script -->
+  <script src="js/script.js"></script>
+</html>
