@@ -32,13 +32,29 @@
       <!-- Navbar - Button -->
       <div class="navbar-button">
         <button id="search-button"><img src="icons/search-light.svg" /></button>
-        <button id="shopping-cart-button"><img src="icons/shopping-cart-light.svg" /></button>
+        <button id="shopping-cart-button">
+          <img src="icons/shopping-cart-light.svg" />
+          <span class="quantity-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span>
+        </button>
         <button id="menu-button"><img src="icons/menu.svg" /></button>
       </div>
       <!-- Navbar - Search Bar -->
       <div class="search-bar">
         <input type="text" id="search-box" placeholder="Cari menu disini..." autocomplete="off" />
         <label for="search-box"><img src="icons/search-dark.svg" /></label>
+      </div>
+      <!-- Navbar - Shopping Cart -->
+      <div class="shopping-cart">
+        <h2>Cart List</h2>
+        <!-- Items -->
+        <div class="cart-item">
+          <img src="images/menu.jpg" />
+          <div class="item-description">
+            <h3 class="item-name">Latten Bean</h3>
+            <p class="item-price">Rp 30.000</p>
+          </div>
+          <div class="remove-item"><img src="icons/trash.svg" /></div>
+        </div>
       </div>
     </nav>
     <!-- Hero Section -->
@@ -69,6 +85,52 @@
       </div>
     </section>
     <!-- Menu Section -->
+    <section id="menu" class="menu" x-data="items">
+      <h2>Menu Us</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, repudiandae?</p>
+      <div class="row">
+        <!-- Menu - Items -->
+        <template x-for="(item, index) in items" x-key="index">
+          <div class="product-card">
+            <!-- Image -->
+            <div class="product-image">
+              <img :src="`images/${item.img}`" :alt="item.name" />
+            </div>
+            <!-- Contents -->
+            <div class="product-contents">
+              <h3 x-text="item.name"></h3>
+              <div class="product-stars">
+                <img src="icons/star.svg" />
+                <img src="icons/star.svg" />
+                <img src="icons/star.svg" />
+                <img src="icons/star.svg" />
+                <img src="icons/star.svg" />
+              </div>
+              <p class="product-price"><span x-text="rupiah(item.price)"></span></p>
+            </div>
+            <!-- Buttons -->
+            <div class="product-buttons">
+              <!-- Cart Button -->
+              <button @click="$store.cart.add(item)">
+                <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor">
+                  <path
+                    d="M263.79-96Q234-96 213-117.21t-21-51Q192-198 213.21-219t51-21Q294-240 315-218.79t21 51Q336-138 314.79-117t-51 21Zm432 0Q666-96 645-117.21t-21-51Q624-198 645.21-219t51-21Q726-240 747-218.79t21 51Q768-138 746.79-117t-51 21ZM253-696l83 192h301l82-192H253Zm-31-72h570q14 0 20.5 11t1.5 23L702.63-476.14Q694-456 676.5-444T637-432H317l-42 72h457q15.3 0 25.65 10.29Q768-339.42 768-324.21t-10.35 25.71Q747.3-288 732-288H276q-43 0-63.5-36.15-20.5-36.16.5-71.85l52-90-131-306H84q-15.3 0-25.65-10.29Q48-812.58 48-827.79t10.35-25.71Q68.7-864 84-864h73q11 0 19.5 6t13.5 16l32 74Zm114 264h301-301Z"
+                  />
+                </svg>
+              </button>
+              <!-- Item Detail Button -->
+              <button class="item-detail-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor">
+                  <path
+                    d="M480-312q70 0 119-49t49-119q0-70-49-119t-119-49q-70 0-119 49t-49 119q0 70 49 119t119 49Zm0-72q-40 0-68-28t-28-68q0-40 28-68t68-28q40 0 68 28t28 68q0 40-28 68t-68 28Zm0 192q-130 0-239-69.5T68-445q-5-8-7-16.77t-2-18Q59-489 61-498t7-17q64-114 173-183.5T480-768q130 0 239 69.5T892-515q5 8 7 16.77t2 18q0 9.23-2 18.23t-7 17q-64 114-173 183.5T480-192Zm0-288Zm0 216q112 0 207-58t146-158q-51-100-146-158t-207-58q-112 0-207 58T127-480q51 100 146 158t207 58Z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </template>
+      </div>
+    </section>
     <!-- Contact Section -->
     <section id="contact" class="contact">
       <h2>Contact Us</h2>

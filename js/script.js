@@ -1,8 +1,7 @@
 // Menu
 const navbarNav = document.querySelector(".navbar-nav");
-document.querySelector("#menu-button").onclick = (e) => {
+document.querySelector("#menu-button").onclick = () => {
   navbarNav.classList.toggle("active");
-  e.preventDefault();
 };
 
 // Search Bar
@@ -14,9 +13,16 @@ document.querySelector("#search-button").onclick = (e) => {
   e.preventDefault();
 };
 
+// Shopping Cart
+const shoppingCart = document.querySelector(".shopping-cart");
+document.querySelector("#shopping-cart-button").onclick = (e) => {
+  shoppingCart.classList.toggle("active");
+};
+
 // Click Outside of an Element
 const menuButton = document.querySelector("#menu-button");
 const searchButton = document.querySelector("#search-button");
+const shoppingCartButton = document.querySelector("#shopping-cart-button");
 document.addEventListener("click", function (e) {
   // Menu
   if (!menuButton.contains(e.target) && !navbarNav.contains(e.target)) {
@@ -25,5 +31,10 @@ document.addEventListener("click", function (e) {
   // Search Bar
   if (!searchButton.contains(e.target) && !searchBar.contains(e.target)) {
     searchBar.classList.remove("active");
+  }
+
+  // Shopping Cart
+  if (!shoppingCartButton.contains(e.target) && !shoppingCart.contains(e.target)) {
+    shoppingCart.classList.remove("active");
   }
 });

@@ -153,6 +153,73 @@ body {
   margin-right: 16px;
 }
 
+/* Navbar - Shopping Cart */
+.navbar .shopping-cart {
+  width: 500px;
+  height: 100vh;
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  color: var(--primary);
+  background-color: var(--light);
+  padding: 16px;
+  transition: 0.3s;
+}
+
+.navbar .shopping-cart.active {
+  right: 0;
+}
+
+.navbar .shopping-cart h2 {
+  font-size: 24px;
+  color: var(--background);
+  text-align: center;
+  margin: 0 0 24px;
+}
+
+.navbar .shopping-cart .cart-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  border-top: 1px dashed var(--background);
+  margin-bottom: 16px;
+  padding-top: 16px;
+}
+
+.navbar .shopping-cart .cart-item:last-of-type {
+  border-bottom: 1px dashed var(--background);
+  padding-bottom: 16px;
+}
+
+.navbar .shopping-cart .cart-item img {
+  height: 56px;
+  border-radius: 50%;
+}
+
+.navbar .shopping-cart .cart-item .remove-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  right: 8px;
+}
+
+.navbar .shopping-cart .cart-item .remove-item img {
+  height: 20px;
+}
+
+.navbar .shopping-cart .cart-item .item-description .item-name {
+  font-size: 18px;
+  color: var(--background);
+  padding-bottom: 8px;
+}
+
+.navbar .shopping-cart .cart-item .item-description .item-price {
+  font-size: 14px;
+  color: var(--background);
+}
+
 /* ============================================== */
 /*  Hero Section  */
 /* ============================================== */
@@ -260,6 +327,82 @@ body {
   font-size: 14px;
   line-height: 2;
   margin-bottom: 16px;
+}
+
+/* ============================================== */
+/*  Menu Section  */
+/* ============================================== */
+.menu {
+  padding: 160px 7% 24px;
+}
+
+.menu h2 {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.menu p {
+  max-width: 480px;
+  font-size: 14px;
+  text-align: center;
+  line-height: 2;
+  margin: auto;
+}
+
+.menu .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 48px;
+  margin-top: 48px;
+}
+
+/* Menu - Items */
+.menu .row .product-card {
+  text-align: center;
+  margin: auto;
+}
+
+.menu .row .product-card .product-image img {
+  max-width: 150px;
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.menu .row .product-card .product-contents h3 {
+  margin: 16px auto 8px;
+}
+
+.menu .row .product-card .product-contents .product-stars img {
+  width: 16px;
+  height: 16px;
+}
+
+.menu .row .product-card .product-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.menu .row .product-card .product-buttons button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  color: var(--light);
+  background-color: transparent;
+  border: 1px solid var(--light);
+  border-radius: 50%;
+  margin-top: 12px;
+}
+
+.menu .row .product-card .product-buttons button:hover {
+  color: #503011;
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
 
 /* ============================================== */
@@ -472,6 +615,28 @@ body {
     right: 32px;
   }
 
+  /* Navbar - Shopping Cart */
+  .navbar .shopping-cart {
+    max-width: 300px;
+  }
+
+  .navbar .shopping-cart h2 {
+    font-size: 18px;
+  }
+
+  .navbar .shopping-cart .cart-item img {
+    height: 48px;
+  }
+
+  .navbar .shopping-cart .cart-item .item-name {
+    font-size: 14px;
+    margin-bottom: -2px;
+  }
+
+  .navbar .shopping-cart .cart-item .item-price {
+    font-size: 12px;
+  }
+
   /* ============================================== */
   /*  Hero Section  */
   /* ============================================== */
@@ -514,6 +679,29 @@ body {
 
   .about .row .about-contents h3 {
     margin-top: 24px;
+  }
+
+  /* ============================================== */
+  /*  Menu Section  */
+  /* ============================================== */
+  .menu h2 {
+    font-size: 24px;
+    margin-bottom: 48px;
+  }
+
+  .menu .row {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
+    gap: 32px;
+    justify-content: center;
+  }
+
+  /* Menu - Items */
+  .menu .row .product-card h3 {
+    font-size: 14px;
+  }
+
+  .menu .row .product-card p {
+    font-size: 12px;
   }
 
   /* ============================================== */
