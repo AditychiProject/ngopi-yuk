@@ -1,26 +1,67 @@
 document.addEventListener("alpine:init", () => {
-  // Data Items
+  // Items Data
   Alpine.data("items", () => ({
     items: [
-      { id: 1, name: "Espresso", img: "menu.jpg", price: 10000 },
-      { id: 2, name: "Americano", img: "menu.jpg", price: 24000 },
-      { id: 3, name: "Latte", img: "menu.jpg", price: 18000 },
-      { id: 4, name: "Cappucino", img: "menu.jpg", price: 16000 },
-      { id: 5, name: "Macchiato", img: "menu.jpg", price: 26000 },
-      { id: 6, name: "Mocha", img: "menu.jpg", price: 22000 },
+      { id: 1, name: "Espresso", img: "espresso.png", price: 10000 },
+      { id: 2, name: "Americano", img: "americano.png", price: 24000 },
+      { id: 3, name: "Latte", img: "latte.jpg", price: 18000 },
+      { id: 4, name: "Cappucino", img: "cappuccino.png", price: 16000 },
+      { id: 5, name: "Macchiato", img: "macchiato.png", price: 26000 },
+      { id: 6, name: "Piccolo", img: "piccolo.png", price: 22000 },
     ],
   }));
 
-  // Data Cart
+  // Cart Data
   Alpine.store("cart", {
     items: [],
     total: 0,
     quantity: 0,
+
+    // Add Item
     add(newItem) {
-      this.items.push(newItem);
-      this.quantity++;
-      this.total += newItem.price;
-      console.log(this.total);
+      const cartItem = this.items.find((item) => item.id === newItem.id);
+
+      if (!cartItem) {
+        this.items.push({ ...newItem, quantity: 1, total: newItem.price });
+        this.quantity++;
+        this.total += newItem.price;
+      } else {
+        this.items -
+          this.items.map((item) => {
+            if (item.id !== newItem.id) {
+              return item;
+            } else {
+              item.quantity++;
+              item.total = item.price * item.quantity;
+              this.quantity++;
+              this.total += item.price;
+              return item;
+            }
+          });
+      }
+    },
+
+    // Remove Item
+    remove(id) {
+      const cartItem = this.items.find((item) => item.id === id);
+
+      if (cartItem.quantity > 1) {
+        this.items = this.items.map((item) => {
+          if (item.id !== id) {
+            return item;
+          } else {
+            item.quantity--;
+            item.total = item.price * item.quantity;
+            this.quantity--;
+            this.total -= item.price;
+            return item;
+          }
+        });
+      } else if (cartItem.quantity === 1) {
+        this.items = this.items.filter((item) => item.id !== id);
+        this.quantity--;
+        this.total -= cartItem.price;
+      }
     },
   });
 });

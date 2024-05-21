@@ -1,10 +1,10 @@
-// Menu
+// Menu Button
 const navbarNav = document.querySelector(".navbar-nav");
 document.querySelector("#menu-button").onclick = () => {
   navbarNav.classList.toggle("active");
 };
 
-// Search Bar
+// Search Button
 const searchBar = document.querySelector(".search-bar");
 const searchBox = document.querySelector("#search-box");
 document.querySelector("#search-button").onclick = (e) => {
@@ -13,7 +13,7 @@ document.querySelector("#search-button").onclick = (e) => {
   e.preventDefault();
 };
 
-// Shopping Cart
+// Shopping Cart Button
 const shoppingCart = document.querySelector(".shopping-cart");
 document.querySelector("#shopping-cart-button").onclick = (e) => {
   shoppingCart.classList.toggle("active");
@@ -24,16 +24,16 @@ const menuButton = document.querySelector("#menu-button");
 const searchButton = document.querySelector("#search-button");
 const shoppingCartButton = document.querySelector("#shopping-cart-button");
 document.addEventListener("click", function (e) {
-  // Menu
+  // Menu Button
   if (!menuButton.contains(e.target) && !navbarNav.contains(e.target)) {
     navbarNav.classList.remove("active");
   }
-  // Search Bar
+  // Search Button
   if (!searchButton.contains(e.target) && !searchBar.contains(e.target)) {
     searchBar.classList.remove("active");
   }
 
-  // Shopping Cart
+  // Shopping Cart Button
   if (!shoppingCartButton.contains(e.target) && !shoppingCart.contains(e.target)) {
     shoppingCart.classList.remove("active");
   }

@@ -195,18 +195,7 @@ body {
 .navbar .shopping-cart .cart-item img {
   height: 56px;
   border-radius: 50%;
-}
-
-.navbar .shopping-cart .cart-item .remove-item {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  position: absolute;
-  right: 8px;
-}
-
-.navbar .shopping-cart .cart-item .remove-item img {
-  height: 20px;
+  margin-left: 16px;
 }
 
 .navbar .shopping-cart .cart-item .item-description .item-name {
@@ -216,8 +205,41 @@ body {
 }
 
 .navbar .shopping-cart .cart-item .item-description .item-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
   font-size: 14px;
   color: var(--background);
+}
+
+.navbar .shopping-cart .cart-item .item-description .item-price #add,
+.navbar .shopping-cart .cart-item .item-description .item-price #remove {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--light);
+  background-color: var(--background);
+  border-radius: 4px;
+  margin: 0 4px;
+  padding: 4px 8px;
+}
+
+.shopping-cart .cart-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  color: var(--background);
+  text-align: center;
+}
+
+.shopping-cart .cart-total {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--background);
+  text-align: right;
 }
 
 /* ============================================== */
@@ -597,7 +619,7 @@ body {
   }
 }
 
-/* Modal - Close Button */
+/* Modal Box - Close Button */
 .modal .modal-container .close-button {
   display: flex;
   justify-content: center;
@@ -615,7 +637,7 @@ body {
   padding: 8px;
 }
 
-/* Modal - Contents */
+/* Modal Box - Contents */
 .modal-contents {
   display: flex;
   flex-wrap: nowrap;
@@ -748,12 +770,12 @@ body {
     height: 48px;
   }
 
-  .navbar .shopping-cart .cart-item .item-name {
+  .navbar .shopping-cart .cart-item .item-description .item-name {
     font-size: 14px;
     margin-bottom: -2px;
   }
 
-  .navbar .shopping-cart .cart-item .item-price {
+  .navbar .shopping-cart .cart-item .item-description .item-price {
     font-size: 12px;
   }
 
