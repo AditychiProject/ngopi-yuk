@@ -119,7 +119,7 @@
                 </svg>
               </button>
               <!-- Item Detail Button -->
-              <button class="item-detail-button">
+              <button type="button" class="item-detail-button">
                 <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor">
                   <path
                     d="M480-312q70 0 119-49t49-119q0-70-49-119t-119-49q-70 0-119 49t-49 119q0 70 49 119t119 49Zm0-72q-40 0-68-28t-28-68q0-40 28-68t68-28q40 0 68 28t28 68q0 40-28 68t-68 28Zm0 192q-130 0-239-69.5T68-445q-5-8-7-16.77t-2-18Q59-489 61-498t7-17q64-114 173-183.5T480-768q130 0 239 69.5T892-515q5 8 7 16.77t2 18q0 9.23-2 18.23t-7 17q-64 114-173 183.5T480-192Zm0-288Zm0 216q112 0 207-58t146-158q-51-100-146-158t-207-58q-112 0-207 58T127-480q51 100 146 158t207 58Z"
@@ -196,6 +196,32 @@
         <p>Copyright &copy; 2024 All rights reserved by Aditychi.</p>
       </div>
     </footer>
+    <!-- Modal Box -->
+    <div id="item-detail-modal" class="modal">
+      <div class="modal-container">
+        <!-- Modal Box - Close Button -->
+        <button type="button" class="close-button">X</button>
+        <!-- Modal Box - Contents -->
+        <div class="modal-contents">
+          <img src="images/menu.jpg" />
+          <div class="product-contents">
+            <h3>Americano</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam eum rerum nostrum facere minima velit dignissimos neque, laudantium id nemo.</p>
+            <div class="product-rating">
+              <img src="icons/star.svg" />
+              <img src="icons/star.svg" />
+              <img src="icons/star.svg" />
+              <img src="icons/star.svg" />
+              <img src="icons/star.svg" />
+            </div>
+            <a href="#" class="product-cart">
+              <img src="icons/shopping-cart-dark.svg" />
+              <span>Rp 30.000</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
   <!-- Script -->
   <script src="js/script.js"></script>
