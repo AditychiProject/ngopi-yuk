@@ -177,11 +177,17 @@ body {
   margin: 0 0 24px;
 }
 
+.navbar .shopping-cart .shopping-cart-items {
+  height: 220px;
+  overflow: auto;
+}
+
 .navbar .shopping-cart .cart-item {
   display: flex;
   align-items: center;
   gap: 24px;
   position: relative;
+  overflow: auto;
   border-top: 1px dashed var(--background);
   margin-bottom: 16px;
   padding-top: 16px;
@@ -230,7 +236,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  height: 10vh;
   color: var(--background);
   text-align: center;
 }
@@ -240,6 +246,7 @@ body {
   font-weight: 700;
   color: var(--background);
   text-align: right;
+  margin-top: 24px;
 }
 
 /* ============================================== */
@@ -766,8 +773,13 @@ body {
     font-size: 18px;
   }
 
+  .navbar .shopping-cart .shopping-cart-items {
+    overflow-x: scroll;
+  }
+
   .navbar .shopping-cart .cart-item img {
     height: 48px;
+    margin-left: 4px;
   }
 
   .navbar .shopping-cart .cart-item .item-description .item-name {

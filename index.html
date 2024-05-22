@@ -47,23 +47,25 @@
       <div class="shopping-cart">
         <h2>Cart List</h2>
         <!-- Items -->
-        <template x-for="(item, index) in $store.cart.items" x-key="index">
-          <div class="cart-item">
-            <img :src="`images/${item.img}`" :alt="item.name" />
-            <div class="item-description">
-              <h3 class="item-name" x-text="item.name"></h3>
-              <div class="item-price">
-                <span x-text="rupiah(item.price)"></span>
-                <span>x</span>
-                <button id="remove" @click="$store.cart.remove(item.id)">-</button>
-                <span x-text="item.quantity"></span>
-                <button id="add" @click="$store.cart.add(item)">&plus;</button>
-                <span>=</span>
-                <span x-text="rupiah(item.total)" style="font-weight: 700"></span>
+        <div class="shopping-cart-items">
+          <template x-for="(item, index) in $store.cart.items" x-key="index">
+            <div class="cart-item">
+              <img :src="`images/${item.img}`" :alt="item.name" />
+              <div class="item-description">
+                <h3 class="item-name" x-text="item.name"></h3>
+                <div class="item-price">
+                  <span x-text="rupiah(item.price)"></span>
+                  <span>x</span>
+                  <button id="remove" @click="$store.cart.remove(item.id)">-</button>
+                  <span x-text="item.quantity"></span>
+                  <button id="add" @click="$store.cart.add(item)">&plus;</button>
+                  <span>=</span>
+                  <span x-text="rupiah(item.total)" style="font-weight: 700"></span>
+                </div>
               </div>
             </div>
-          </div>
-        </template>
+          </template>
+        </div>
         <h4 x-show="!$store.cart.items.length" class="cart-empty">Cart is empty</h4>
         <h4 x-show="$store.cart.items.length" class="cart-total">Total: <span x-text="rupiah($store.cart.total)"></span></h4>
       </div>
