@@ -50,7 +50,9 @@
         <div class="shopping-cart-items">
           <template x-for="(item, index) in $store.cart.items" x-key="index">
             <div class="cart-item">
+              <!-- Image -->
               <img :src="`images/${item.img}`" :alt="item.name" />
+              <!-- Description -->
               <div class="item-description">
                 <h3 class="item-name" x-text="item.name"></h3>
                 <div class="item-price">
