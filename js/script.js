@@ -1,5 +1,6 @@
 // Menu Button
 const navbarNav = document.querySelector(".navbar-nav");
+
 document.querySelector("#menu-button").onclick = () => {
   navbarNav.classList.toggle("active");
 };
@@ -7,6 +8,7 @@ document.querySelector("#menu-button").onclick = () => {
 // Search Button
 const searchBar = document.querySelector(".search-bar");
 const searchBox = document.querySelector("#search-box");
+
 document.querySelector("#search-button").onclick = (e) => {
   searchBar.classList.toggle("active");
   searchBox.focus();
@@ -15,14 +17,16 @@ document.querySelector("#search-button").onclick = (e) => {
 
 // Shopping Cart Button
 const shoppingCart = document.querySelector(".shopping-cart");
+
 document.querySelector("#shopping-cart-button").onclick = (e) => {
   shoppingCart.classList.toggle("active");
 };
 
-// Click Outside of an Element
+// Klik di Luar Elemen
 const menuButton = document.querySelector("#menu-button");
 const searchButton = document.querySelector("#search-button");
 const shoppingCartButton = document.querySelector("#shopping-cart-button");
+
 document.addEventListener("click", function (e) {
   // Menu Button
   if (!menuButton.contains(e.target) && !navbarNav.contains(e.target)) {

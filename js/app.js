@@ -1,5 +1,5 @@
 document.addEventListener("alpine:init", () => {
-  // Items Data
+  // Data Produk
   Alpine.data("items", () => ({
     items: [
       { id: 1, name: "Espresso", img: "espresso.png", price: 10000 },
@@ -11,13 +11,13 @@ document.addEventListener("alpine:init", () => {
     ],
   }));
 
-  // Cart Data
+  // Data Keranjang
   Alpine.store("cart", {
     items: [],
     total: 0,
     quantity: 0,
 
-    // Add Item
+    // Tambah Produk
     add(newItem) {
       const cartItem = this.items.find((item) => item.id === newItem.id);
 
@@ -41,7 +41,7 @@ document.addEventListener("alpine:init", () => {
       }
     },
 
-    // Remove Item
+    // Hapus Produk
     remove(id) {
       const cartItem = this.items.find((item) => item.id === id);
 
@@ -66,7 +66,7 @@ document.addEventListener("alpine:init", () => {
   });
 });
 
-// Convert String to Rupiah
+// Konversi String ke Rupiah
 const rupiah = (number) => {
   return new Intl.NumberFormat("id-ID", {
     style: "currency",

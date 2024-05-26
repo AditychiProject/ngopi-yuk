@@ -22,14 +22,14 @@
     <nav class="navbar" x-data>
       <!-- Navbar - Brand -->
       <a href="#" class="navbar-brand">Ngopi Yuk</a>
-      <!-- Navbar - Nav -->
+      <!-- Navbar - Navs -->
       <div class="navbar-nav">
         <a href="#">Home</a>
         <a href="#about">About</a>
         <a href="#menu">Menu</a>
         <a href="#contact">Contact</a>
       </div>
-      <!-- Navbar - Button -->
+      <!-- Navbar - Buttons -->
       <div class="navbar-button">
         <button id="search-button"><img src="icons/search-light.svg" /></button>
         <button id="shopping-cart-button">
@@ -46,7 +46,7 @@
       <!-- Navbar - Shopping Cart -->
       <div class="shopping-cart">
         <h2>Cart List</h2>
-        <!-- Items -->
+        <!-- Products -->
         <div class="shopping-cart-items">
           <template x-for="(item, index) in $store.cart.items" x-key="index">
             <div class="cart-item">
@@ -88,7 +88,7 @@
         <div class="about-image">
           <img src="images/hero-bg.jpg" />
         </div>
-        <!-- About - Contents -->
+        <!-- About - Content -->
         <div class="about-contents">
           <h3>Why Choice Our Coffee?</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa corrupti, enim quasi iste officiis magni.</p>
@@ -104,14 +104,15 @@
       <h2>Menu Us</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, repudiandae?</p>
       <div class="row">
-        <!-- Menu - Items -->
+        <!-- Menu - Product -->
         <template x-for="(item, index) in items" x-key="index">
+          <!-- Products -->
           <div class="product-card">
             <!-- Image -->
             <div class="product-image">
               <img :src="`images/${item.img}`" :alt="item.name" />
             </div>
-            <!-- Contents -->
+            <!-- Description -->
             <div class="product-contents">
               <h3 x-text="item.name"></h3>
               <div class="product-stars">
@@ -216,7 +217,7 @@
       <div class="modal-container">
         <!-- Modal Box - Close Button -->
         <button type="button" class="close-button">X</button>
-        <!-- Modal Box - Contents -->
+        <!-- Modal Box - Description -->
         <div class="modal-contents">
           <img src="images/menu.jpg" />
           <div class="product-contents">
